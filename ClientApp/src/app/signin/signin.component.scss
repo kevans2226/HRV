@@ -1,0 +1,10 @@
+.form-buttons { margin-top: 20px;}
+.singInPanel { width: 700px; }
+.form-field { width: 500px; }
+
+@media only screen and (max-width: 600px)  { 
+    .form-field { width: 100%; }
+    .form-buttons { width: 100%; }
+    .mat-form-field-infix { width: 100%; }
+    .signInPanel { width: 100%; }
+}

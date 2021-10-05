@@ -1,0 +1,47 @@
+<body>
+  <div *ngIf="!loading">
+    <header>
+      <div class="headerContainer">
+        <div class="headerLeft col">
+          <ul class="navbar-nav">
+            <li><a href="/">HRV Collector</a></li>
+          </ul>
+        </div>
+        <div class="headerRight col">
+            <span *ngIf="userSignedIn"  class="rightItem">{{ userId }}</span>
+            <span class="rightItem">
+              <button mat-icon-button aria-label="userMenu" [matMenuTriggerFor]="menu">  
+                <mat-icon>account_circle</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item *ngIf="userSignedIn" (click)="passwordChange()">
+                  <mat-icon>security</mat-icon>
+                  <span>Change Password</span>
+                </button>
+                <button mat-menu-item *ngIf="userSignedIn" (click)="logOff()">
+                  <mat-icon>logout</mat-icon>
+                  <span>Logout</span>
+                </button>
+                <button mat-menu-item *ngIf="!userSignedIn" (click)="logIn()">
+                  <mat-icon>login</mat-icon>
+                  <span>Login</span>
+                </button>
+                <button mat-menu-item *ngIf="!userSignedIn" (click)="signUp()">
+                  <mat-icon>account_circle</mat-icon>
+                  <span>Sign Up</span>
+                </button>
+              </mat-menu>
+              
+            </span>
+        </div>
+      </div>
+    </header>
+    <div class="container" style="padding: 10px;">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <div *ngIf="loading">
+    Loading...
+  </div>
+</body>

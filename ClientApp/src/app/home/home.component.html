@@ -1,0 +1,18 @@
+
+
+<h1>HRV Collector</h1>
+<h2>Welcome to this simple app to collect your HRV data</h2>
+
+<div *ngIf="!app.userSignedIn">
+    <ul style="list-style: none;">
+        <li style="height: 50px; vertical-align: middle;">
+            <mat-icon>login</mat-icon>&nbsp;<a [routerLink]="['/signin']">Log In</a>
+        </li>
+        <li style="height: 50px; vertical-align: middle;">
+            <mat-icon>account_circle</mat-icon>&nbsp;<a [routerLink]="['/newUser']">Sign Up</a>
+        </li>
+    </ul>
+</div>
+<div *ngIf="app.userSignedIn">
+    <a [routerLink]="['/hrv']">HRV Readings</a>
+</div>

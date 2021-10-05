@@ -1,0 +1,15 @@
+.alert { 
+    background-color: pink;
+    border: red solid 3px;
+    color: red; 
+    font-weight: bold; 
+    padding: 3px; 
+    text-align: center;
+    width: 95%;
+}
+
+.form-field { width: 600px;}
+
+@media only screen and (max-width: 600px) { 
+    .form-field { width: 100%; }
+}

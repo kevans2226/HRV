@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+html { font-size: 14px; }
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+ul.navbar-nav { list-style: none;}
+
+code { color: #e01a76; }
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}  
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.rightItem { 
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rightItem a:visited  a:active { color: white;}
+a.menuLink { color: white; }
+
+
+  
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.headerContainer {
+    display: flex; 
+    width: 100%; 
+    border: solid black 1px;
+    background-color: blue;
+    color: white;
+}
+
+.headerContainer a:visited { color: white; }
+
+.headerContainer .col { width: 50%; }
+.headerRight { text-align: right; padding-right: 5px;}
+
+
+@media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+
+    .label {
+        font-weight: bold; 
+        padding-right: 10px; 
+        width: 250px; 
+        display: block;
+    }
+
+    .headerRight { text-align: right; padding-right: 50px;}
+}

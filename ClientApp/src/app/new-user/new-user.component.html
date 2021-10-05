@@ -1,0 +1,65 @@
+<div>
+<form [formGroup]="formNewUser">
+    <div >
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Email Address</mat-label>
+            <input type="email" matInput formControlName="email">
+        </mat-form-field>
+        <div *ngIf="formNewUser.controls.email.touched && formNewUser.controls.email.invalid" class="alert alert-danger">
+            <mat-error *ngIf="formNewUser.controls.userName.errors?.required">Email required</mat-error>
+        </div>
+    </div>
+    <div>
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>User Name</mat-label>
+            <input type="text" matInput formControlName="userName">            
+        </mat-form-field>
+        
+        <div *ngIf="formNewUser.controls.userName.touched && formNewUser.controls.userName.invalid" class="alert alert-danger">
+            <mat-error *ngIf="formNewUser.controls.userName.errors?.required">User Name required</mat-error>
+        </div>
+    </div>
+    <div>
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>First Name</mat-label>
+            <input type="text" matInput formControlName="firstName">
+        </mat-form-field>
+        <div *ngIf="formNewUser.controls.firstName.touched && formNewUser.controls.firstName.invalid" class="alert alert-danger">
+            <mat-error *ngIf="formNewUser.controls.firstName.errors?.required">First Name required</mat-error>
+        </div>
+    </div>
+    <div>
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Last Name</mat-label>
+            <input type="text" matInput formControlName="lastName">
+        </mat-form-field>
+        <div *ngIf="formNewUser.controls.lastName.touched && formNewUser.controls.lastName.invalid" class="alert alert-danger">
+            <mat-error *ngIf="formNewUser.controls.lastName.errors?.required">Last Name required</mat-error>
+        </div>
+    </div>
+    <div>
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password">
+        </mat-form-field>
+        <div *ngIf="formNewUser.controls.password.touched && formNewUser.controls.password.invalid" class="alert alert-danger">
+            <mat-error *ngIf="formNewUser.controls.password.errors?.required">Password is required.</mat-error>
+        </div>
+
+    </div>
+    <div>
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Confirm Password</mat-label>
+            <input type="password" matInput formControlName="confirmPassword">
+        </mat-form-field>
+
+        <div *ngIf="formNewUser.controls.confirmPassword.touched && formNewUser.controls.password.invalid" class="alert alert-danger">
+            <div *ngIf=formNewUser.controls.confirmPassword.errors?.required>Confirm Password is required</div>
+            <div *ngIf="formNewUser.controls.confirmPassword.errors?.mustMatch">Passwords do not match</div>
+        </div>
+    </div>
+    
+    <button mat-raised-button color="primary" [disabled]="formNewUser.invalid" (click)="submitNewUser()">Submit</button>
+</form>
+
+</div>
